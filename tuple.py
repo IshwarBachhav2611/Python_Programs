@@ -1,38 +1,42 @@
-# 1. Creating sets
-fruits = {"apple", "banana", "cherry"}
-numbers = {1, 2, 3, 4, 4}  # duplicates automatically removed
-print("Fruits set:", fruits)
-print("Numbers set:", numbers)
+# 1. Creating a tuple
+numbers = (10, 20, 30, 40, 20)
+print("Original Tuple:", numbers)
 
-# 2. Adding elements
-fruits.add("orange")           # add single element
-fruits.update(["mango", "kiwi"])  # add multiple elements
-print("After adding elements:", fruits)
+# 2. Accessing elements
+print("First element:", numbers[0])
+print("Last element:", numbers[-1])
 
-# 3. Removing elements
-fruits.remove("banana")   # raises error if not present
-fruits.discard("grape")   # no error if element not present
-popped_item = fruits.pop()  # removes arbitrary element
-print("After removing elements:", fruits)
-print("Popped item:", popped_item)
+# 3. Slicing
+print("Slice numbers[1:4]:", numbers[1:4])
+print("Slice with negative index:", numbers[-4:-1])
 
-# 4. Set operations
-A = {1, 2, 3, 4}
-B = {3, 4, 5, 6}
+# 4. Tuple methods
+print("Count of 20:", numbers.count(20))
+print("Index of 30:", numbers.index(30))
 
-print("A union B:", A | B)         # {1,2,3,4,5,6}
-print("A intersection B:", A & B)  # {3,4}
-print("A difference B:", A - B)    # {1,2}
-print("A symmetric difference B:", A ^ B)  # {1,2,5,6}
+# 5. Packing (automatic tuple creation)
+packed = 1, "Python", 3.14
+print("Packed Tuple:", packed)
 
-# 5. Checking membership
-print("Is 3 in A?", 3 in A)
-print("Is 5 not in A?", 5 not in A)
+# 6. Unpacking
+a, b, c = packed
+print("Unpacked Values:", a, b, c)
 
-# 6. Length of a set
-print("Length of set A:", len(A))
+# 7. Nested tuple
+nested = (1, 2, (3, 4, 5))
+print("Nested Tuple:", nested)
+print("Access 4 inside nested:", nested[2][1])
 
-# 7. Clearing and copying
-B_copy = B.copy()
-B_copy.clear()
-print("Cleared copy of B:", B_copy)
+# 8. Looping through tuple
+print("\nLooping:")
+for item in numbers:
+    print(item)
+
+# 9. Converting tuple to list (to modify)
+temp_list = list(numbers)
+temp_list.append(100)
+print("After converting to list and modifying:", temp_list)
+
+# 10. Converting back to tuple
+new_tuple = tuple(temp_list)
+print("Converted back to tuple:", new_tuple)
